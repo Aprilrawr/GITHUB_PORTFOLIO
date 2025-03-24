@@ -10,23 +10,27 @@
 
     <title>Portfolio Page</title>
     <link rel="stylesheet" href="css\styles.css">
+
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('components/navbar.html')
+          .then(res => res.text())
+          .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+    
+        fetch('components/contact.html')
+          .then(res => res.text())
+          .then(data => document.getElementById('contact-placeholder').innerHTML = data);
+      });
+    </script>
+    
+
   </head>
   <body>
   <header>
+    
 
-<!-- START NAV -->
-
-<nav>
-  <div class="nav-toggle" id="nav-toggle">&#9776;</div>
-  <div class="nav-links" id="nav-links">
-    <a class="nav-link" href="#welcome-section">About</a>
-    <a class="nav-link" href="#projects">Projects</a>
-    <a class="nav-link" href="#skills-section">Skills</a>
-    <a class="nav-link" href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- END NAV -->
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
 
 	</header>
 
@@ -43,12 +47,13 @@
   </div>
 
   <div class="welcome-right">
-    <img src="Material/600x450-assets/myphoto.png" alt="Rania Photo" class="welcome-img">
+    <img src="Material/600x450-assets/myartphoto.png" alt="Rania Photo" class="welcome-img">
   </div>
 </section>
 
-
 <!-- END WELCOME SECTION -->
+
+
 
 <!-- START LOGOS SECTION -->
 
@@ -258,38 +263,8 @@
 <!-- END SKILLS SECTION -->
 
 
-<!-- START CONTACT SECTION -->
-
-<section id="contact">
-  <h2>Let’s Connect</h2>
-  <p>If you feel like I would be a good fit for your company, please feel free to reach out!</p>
-
-  <div class="contact-links">
-
-    <a href="mailto:rawrania@gmail.com" class="contact-link" target="_blank">
-      <i class="fas fa-envelope"></i>
-      <span>Email Me</span>
-    </a>
-  
-    <a href="www.linkedin.com/in/ourania-nikolakopoulou-96696ab6" class="contact-link" target="_blank">
-      <i class="fab fa-linkedin"></i>
-      <span>LinkedIn</span>
-    </a>
-  
-    <a href="https://github.com/YOUR-GITHUB" class="contact-link" target="_blank">
-      <i class="fab fa-github"></i>
-      <span>GitHub</span>
-    </a>
-  
-    <a href="tel:+14169943510" class="contact-link">
-      <i class="fas fa-phone-alt"></i>
-      <span>Call Me</span>
-    </a>
-  </div>
-  
-</section>
-
-<!-- END CONTACT SECTION -->
+<!-- Contact placeholder -->
+<div id="contact-placeholder"></div>
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" class="lightbox hidden">
@@ -335,6 +310,23 @@
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       links.classList.remove('show');
+    });
+  });
+</script>
+
+<!-- Ensure all images are Loaded -->
+
+<script src="path-to-masonry.pkgd.min.js"></script>
+<script src="path-to-imagesloaded.pkgd.min.js"></script>
+<script>
+  var grid = document.querySelector('.grid');
+  var msnry;
+
+  imagesLoaded(grid, function() {
+    msnry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
     });
   });
 </script>

@@ -6,22 +6,24 @@
   <title>Games & Food Festival | Case Study</title>
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch('../components/navbar.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+  
+      fetch('../components/contact.html')
+        .then(res => res.text())
+        .then(data => document.getElementById('contact-placeholder').innerHTML = data);
+    });
+  </script>
+
 </head>
 <body>
 
-  <!-- START NAV -->
-
-<nav>
-  <div class="nav-toggle" id="nav-toggle">&#9776;</div>
-  <div class="nav-links" id="nav-links">
-    <a class="nav-link" href="#welcome-section">About</a>
-    <a class="nav-link" href="#projects">Projects</a>
-    <a class="nav-link" href="#skills-section">Skills</a>
-    <a class="nav-link" href="#contact">Contact</a>
-  </div>
-</nav>
-
-<!-- END NAV -->
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
 
 </header>
 
@@ -66,43 +68,43 @@
     <h2>📊 The Results</h2>
     <div class="results-grid">
       <div class="result-card">
-        <h3>👥 Total Participants</h3>
+        <h3>👥<br>Total Participants</h3>
         <p>15,000</p>
       </div>
       <div class="result-card">
-        <h3>🌐 Total Visitors</h3>
+        <h3>🌐<br>Total Visitors</h3>
         <p>9,100</p>
       </div>
       <div class="result-card">
-        <h3>📺 Unique Views</h3>
+        <h3>📺<br>Unique Views</h3>
         <p>5.3 million</p>
       </div>
       <div class="result-card">
-        <h3>🔗 Website</h3>
+        <h3>🔗<br>Website</h3>
         <p><a href="https://gamesandfoodfestival.gr" target="_blank">Site</a></p>
       </div>
       <div class="result-card">
-        <h3>📅 Days</h3>
+        <h3>📅<brDays</h3>
         <p>3</p>
       </div>
       <div class="result-card">
-        <h3>🏆 Prize Pool</h3>
+        <h3>🏆<br>Prize Pool</h3>
         <p>€40,000+</p>
       </div>
       <div class="result-card">
-        <h3>🎁 Prize Pool & Giveaways</h3>
+        <h3>🎁<br>Prize Pool & Giveaways</h3>
         <p>40,000</p>
       </div>
       <div class="result-card">
-        <h3>🎮 Gaming Stations</h3>
+        <h3>🎮<br>Gaming Stations</h3>
         <p>300</p>
       </div>
       <div class="result-card">
-        <h3>👑 Influencers</h3>
+        <h3>👑<br>Influencers</h3>
         <p>200</p>
       </div>
       <div class="result-card">
-        <h3>🕹️ Tournaments</h3>
+        <h3>🕹️<br>Tournaments</h3>
         <p>30</p>
       </div>
     </div>
@@ -172,40 +174,9 @@
 
 <!-- END CaseStudy -->
 
-<!-- START CONTACT SECTION -->
+<!-- Contact placeholder -->
+<div id="contact-placeholder"></div>
 
-<section id="contact">
-    <a href="../index.html#projects" class="contact-link"><i class="fas fa-arrow-left"></i><span class="gradient-text">Back to Projects</span></a>
-<br> <br>
-    <h2>Let’s Connect</h2>
-    <p>If you feel like I would be a good fit for your company, please feel free to reach out!</p>
-  
-    <div class="contact-links">
-  
-      <a href="mailto:rawrania@gmail.com" class="contact-link" target="_blank">
-        <i class="fab fa-envelope"></i>
-        <span class="gradient-text">Email Me</span>
-      </a>
-    
-      <a href="www.linkedin.com/in/ourania-nikolakopoulou-96696ab6" class="contact-link" target="_blank">
-        <i class="fab fa-linkedin"></i>
-        <span class="gradient-text">LinkedIn</span>
-      </a>
-    
-      <a href="https://github.com/YOUR-GITHUB" class="contact-link" target="_blank">
-        <i class="fab fa-github"></i>
-        <span class="gradient-text">GitHub</span>
-      </a>
-    
-      <a href="tel:+14169943510" class="contact-link">
-        <i class="fas fa-phone-alt"></i>
-        <span class="gradient-text">Call Me</span>
-      </a>
-    </div>
-    
-  </section>
-  
-  <!-- END CONTACT SECTION -->
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" class="lightbox hidden">

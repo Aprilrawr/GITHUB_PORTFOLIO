@@ -545,6 +545,21 @@ background-color: #C0BABA; /* Uniform light background */
   color: #111;
 }
 
+.contact-photo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 1em 0;
+}
+
+.contact-photo {
+  width: 9em;  /* approx 144px at 16px base font */
+  height: 9em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.25em solid #d29bec; /* Accent border */
+  box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.3);
+}
+
 
   /* Contact Section Styling End */
 
@@ -657,13 +672,24 @@ background-color: #C0BABA; /* Uniform light background */
     margin-top: 1em;
   }
   
-  .case-study li {
-    margin-top: 1em;
-    margin-left: 2em;
+  .case-study ul {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
   }
   
+  .case-study li {
+    margin-top: 0.8em;
+    font-size: 1em;
+    line-height: 1.5;
+  }
   .case-study p {
-    padding-bottom: 1em;
+    font-size: 1.1em;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    padding: 0 1em; /* Add safe padding */
+    box-sizing: border-box;
   }
   
   .case-study hr {
@@ -701,7 +727,8 @@ background-color: #C0BABA; /* Uniform light background */
   .carousel {
     position: relative;
     overflow: hidden;
-    width: 1040px; /* Show 5 images at once */
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
   }
   
@@ -718,7 +745,7 @@ background-color: #C0BABA; /* Uniform light background */
   }
   
   .carousel-img {
-    width: 300px;
+    max-width: 300px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     margin-right: 10px;
@@ -794,10 +821,11 @@ background-color: #C0BABA; /* Uniform light background */
 }
 
 .result-card p {
-  font-size: 2em;
+  font-size: clamp(1.5em, 4vw, 2em); /* Responsive sizing */
   font-weight: bold;
   margin: 0;
   text-align: center;
+  white-space: nowrap; /* 💥 Prevent line breaks */
 }
 
 .result-card a {
@@ -1027,6 +1055,25 @@ background-color: #C0BABA; /* Uniform light background */
 
   .masonry-grid {
     column-count: 1;
+  }
+
+  .case-study li {
+    font-size: 0.95em;
+  }
+
+  .case-study p {
+    font-size: 1em;
+    padding: 0 0.5em;  /* Less padding for small screens */
+  }
+
+  .carousel-img {
+    max-width: 50vw;
+    margin-right: 5px;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
   }
 
 }
