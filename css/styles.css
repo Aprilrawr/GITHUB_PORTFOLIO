@@ -109,39 +109,6 @@ color: white;
   color: #4E596E;
 }
 
-@media screen and (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5em;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5em;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-link {
-    padding: 0.5em 1em;
-    font-size: 1em;
-    width: 100%;
-  }
-
-  .results-section {
-    padding: 1.5em 1em;
-    margin-top: 3em;
-  }
-}
 
 
 body {
@@ -222,22 +189,7 @@ body {
   border-radius: 12px;
 }
 
-/* Mobile responsiveness */
-@media screen and (max-width: 600px) {
-  #welcome-section {
-    flex-direction: column;
-    padding: 2em 1em;
-  }
 
-  .welcome-left h1 {
-    font-size: 2em;
-  }
-
-  .welcome-img {
-    width: 100%;
-    max-width: 300px;
-  }
-}
 
 
 /* WELCOME SECTION END */
@@ -292,11 +244,6 @@ body {
 }
 
 
-@media screen and (max-width: 600px) {
-  .logos-layout img {
-    height: 40px;
-  }
-}
 
 /* LOGOS SECTION END */
 
@@ -469,106 +416,6 @@ h3 {
 
 /* MEDIA QUERY SMALLER THAN 600px */
 
-@media screen and (max-width: 600px) {
-  
-  /* Navbar tweaks */
-  nav {
-    max-width: 100%;
-    overflow-x: hidden;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5em;
-    padding: 0.5em;
-  }
-
-  .nav-link {
-    font-size: 1em;
-    padding: 0.5em 0.5em;
-  }
-
-  a {
-    font-size: 1em;
-  }
-
-  /* Welcome section narrower */
-  #welcome-section {
-    padding: 1em;
-  }
-
-  /* Grid: 1 column */
-  .projects-grid {
-    grid-template-columns: 1fr;
-    grid-gap: 1rem;
-    padding: 0 1em;
-
-  }
-
-  /* Project tiles */
-  .project-tile {
-    margin: 0.5em 0;
-    padding: 0.75rem;
-  }
-
-  h3 {
-    font-size: 1.1em;
-  }
-
-  .project-desc {
-    font-size: 0.9em;
-    font-weight:lighter;
-    padding: 0.4rem 0.8rem;
-  }
-
-  /* Image max width smaller */
-  .project-img {
-    max-width: 100%;
-  }
-
-  /* Adjust inset for borders */
-  .project-img-container::before,
-  .project-img-container::after {
-    bottom: 0.6em;
-    left: 0.6em;
-    right: 0.6em;
-  }
-
-  .project-img-container .top-border {
-    top: 0.6em;
-    right: 0.6em;
-  }
-
-  .project-img-container .left-border {
-    top: 0.6em;
-    left: 0.6em;
-  }
-
-  /* Smaller border thickness */
-  .project-img-container::before,
-  .project-img-container::after,
-  .project-img-container .top-border,
-  .project-img-container .left-border {
-    height: 0.1em;
-    width: 0.1em;
-  }
-
-  /* Adjust keyframes for smaller insets */
-  @keyframes drawBottom {
-    to { width: calc(100% - 1.2em); }
-  }
-
-  @keyframes drawRight {
-    to { height: calc(100% - 1.2em); }
-  }
-
-  @keyframes drawTop {
-    to { width: calc(100% - 1.2em); }
-  }
-
-  @keyframes drawLeft {
-    to { height: calc(100% - 1.2em); }
-  }
-
-}
 
   /* Contact Section Styling */
 
@@ -629,13 +476,6 @@ h3 {
 
 .contact-link:hover i {
   color: #111;
-}
-
-@media screen and (max-width: 600px) {
-  .contact-link {
-    width: 100%;
-    text-align: center;
-  }
 }
 
 
@@ -707,30 +547,7 @@ h3 {
     gap: 0.5em;
   }
 
-  @media screen and (max-width: 600px) {
-  
-  
-    .category-bubble {
-      font-size: 1em;
-    }
-  
-    .skill-bubble {
-      font-size: 0.85em;
-      padding: 0.4em 0.8em;
-    }
-  }
 
-  @media screen and (max-width: 900px) {
-    .skills-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .skills-grid {
-      grid-template-columns: 1fr;
-    }
-  }
   
   /* Skills Section Styling End */
 
@@ -975,5 +792,155 @@ h3 {
 .lightbox-close:hover {
   background: #b56fd8;
 }
+
+/* =================== MEDIA QUERIES =================== */
+
+/* Max Width: 900px */
+@media screen and (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Max Width: 600px */
+@media screen and (max-width: 600px) {
+  nav {
+    max-width: 100%;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5em;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  .results-section {
+    padding: 1.5em 1em;
+    margin-top: 3em;
+  }
+
+  #welcome-section {
+    flex-direction: column;
+    padding: 2em 1em;
+  }
+
+  .welcome-left h1 {
+    font-size: 2em;
+  }
+
+  .welcome-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .logos-scroll img {
+    height: 40px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    padding: 0 1em;
+  }
+
+  .project-tile {
+    margin: 0.5em 0;
+    padding: 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.1em;
+  }
+
+  .project-desc {
+    font-size: 0.9em;
+    font-weight: lighter;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-img {
+    max-width: 100%;
+  }
+
+  .project-img-container::before,
+  .project-img-container::after,
+  .project-img-container .top-border,
+  .project-img-container .left-border {
+    height: 0.1em;
+    width: 0.1em;
+  }
+
+  .project-img-container::before,
+  .project-img-container::after {
+    bottom: 0.6em;
+    left: 0.6em;
+    right: 0.6em;
+  }
+
+  .project-img-container .top-border {
+    top: 0.6em;
+    right: 0.6em;
+  }
+
+  .project-img-container .left-border {
+    top: 0.6em;
+    left: 0.6em;
+  }
+
+  @keyframes drawBottom {
+    to { width: calc(100% - 1.2em); }
+  }
+
+  @keyframes drawRight {
+    to { height: calc(100% - 1.2em); }
+  }
+
+  @keyframes drawTop {
+    to { width: calc(100% - 1.2em); }
+  }
+
+  @keyframes drawLeft {
+    to { height: calc(100% - 1.2em); }
+  }
+
+  .contact-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-bubble {
+    font-size: 1em;
+  }
+
+  .skill-bubble {
+    font-size: 0.85em;
+    padding: 0.4em 0.8em;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
