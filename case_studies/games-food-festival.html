@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
+    <!-- Github Link fix -->
+    <script>
+      if (window.location.hostname === "aprilrawr.github.io") {
+        const base = document.createElement('base');
+        base.href = "/GITHUB_PORTFOLIO/";
+        document.head.appendChild(base);
+      }
+    </script>
+
   <script defer>
     document.addEventListener("DOMContentLoaded", () => {
       fetch('../components/navbar.html')
