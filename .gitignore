@@ -1,0 +1,22 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Node modules (if using npm or Node.js tools)
+node_modules/
+
+# Build/output directories
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# VS Code settings
+.vscode/
+
+# OS files
+*.swp
