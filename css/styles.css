@@ -5,6 +5,11 @@
   /* outline: 3px solid red; */ /* 💥 See all element bounds */
 }
 
+:root {
+  --pinkgradient: linear-gradient(45deg, #d29bec, #9C2460);
+  --darkgradient: linear-gradient(45deg, #333333, #252525);
+}
+
 html, body {
   width: 100%;
   overflow-x: hidden; /* 💥 Prevent horizontal scrolling */
@@ -47,7 +52,6 @@ border: 5px solid red;
   background: linear-gradient(45deg, #d29bec, #9C2460);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
   background-clip: text; /* for Firefox */
   color: transparent;
 }
@@ -189,10 +193,8 @@ body {
   border-radius: 12px;
 }
 
-
-
-
 /* WELCOME SECTION END */
+
 
 /* LOGOS SECTION START */
 
@@ -201,6 +203,7 @@ body {
   padding: 3em 2em;
   text-align: center;
   overflow: hidden;
+  margin-bottom: 3em;
 }
 
 .logos-section h2 {
@@ -243,8 +246,6 @@ body {
   100% { transform: translateX(-50%); }  /* Still -50%, but now works due to duplication */
 }
 
-
-
 /* LOGOS SECTION END */
 
 #projects {background-color: rgb(50, 50, 50); margin:0; padding: 0;}
@@ -260,8 +261,10 @@ align-items: start;
 padding-bottom: 2em;
 }
 
+
+
 .project-tile {
-  background-color: #404040;
+  background: #404040;
   margin: 0.3em 0;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -293,6 +296,25 @@ h3 {
   font-size: 2.5em;
   padding-top: 0.5em;
   color: #d29bec; /* Accent */
+}
+
+.coming-soon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.75); /* Dark transparent overlay */
+  color: #d29bec; /* Accent text color */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  border-radius: 0; /* Match image corners if needed */
+  z-index: 2;
+  pointer-events: none; /* Ensures clicks go through */
+  text-shadow: 1px 1px 4px black;
 }
 
 
@@ -414,7 +436,48 @@ h3 {
 /* FANCY CSS IMAGE ANIMATION END */
 
 
-/* MEDIA QUERY SMALLER THAN 600px */
+
+/* Featured Work Masonry Layout */
+
+#featured-work {
+  background-color: #f4e6ec;
+  padding: 3em 2em;
+  text-align: center;
+}
+
+#featured-work img {
+background-color: #C0BABA; /* Uniform light background */
+}
+
+#featured-work h2 {
+  margin-top: -1.5em;
+  margin-bottom: 1em;
+  font-size: 2em;
+}
+
+
+.masonry-grid {
+  column-count: 5;
+  column-gap: 1em;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.masonry-grid img {
+  width: 100%;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  display: block;
+  break-inside: avoid;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 
   /* Contact Section Styling */
@@ -445,9 +508,13 @@ h3 {
   gap: 1.5em;
 }
 
+.contact-links a {
+  color: #d29bec;
+}
+
 .contact-link {
   display: inline-block; 
-  background-color: #404040;
+  background: var(--darkgradient);
   padding: 0.8em 1.2em;
   border-radius: 8px;
   text-decoration: none;
@@ -469,7 +536,7 @@ h3 {
 }
 
 .contact-link:hover {
-  background-color: #d29bec;
+  background: var(--pinkgradient);
   color: #111;
   transform: scale(1.05);
 }
@@ -772,6 +839,7 @@ h3 {
   width: 100%;
   max-height: 90vh;
   border-radius: 10px;
+  background-color: #C0BABA; 
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
@@ -794,6 +862,14 @@ h3 {
 }
 
 /* =================== MEDIA QUERIES =================== */
+
+/* Max Width: 1200px */
+@media (max-width: 1200px) {
+  .masonry-grid {
+    column-count: 3;
+  }
+}
+
 
 /* Max Width: 900px */
 @media screen and (max-width: 900px) {
@@ -853,9 +929,17 @@ h3 {
     max-width: 300px;
   }
 
-  .logos-scroll img {
-    height: 40px;
+  .logos-scroll {
+    display: flex;
+    gap: 2em;
+    animation: scroll-logos 10s linear infinite; /* Longer duration = smoother scroll */
   }
+
+  .logos-scroll img {
+    height: 75px;
+  }
+
+
 
   .projects-grid {
     grid-template-columns: 1fr;
@@ -924,7 +1008,7 @@ h3 {
   }
 
   .contact-link {
-    width: 100%;
+    width: 60%;
     text-align: center;
   }
 
@@ -940,6 +1024,11 @@ h3 {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+
+  .masonry-grid {
+    column-count: 1;
+  }
+
 }
 
 

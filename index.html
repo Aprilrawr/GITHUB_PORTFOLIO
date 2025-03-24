@@ -86,6 +86,40 @@
 
 <!-- END LOGOS SECTION -->
 
+<!-- START FEATURED WORK SECTION -->
+<section id="featured-work">
+  <h2 class="gradient-text">Featured Work</h2>
+  <div class="masonry-grid">
+    <img src="Material/featured/AxonView.jpg">
+    <img src="Material/featured/ubitech-details.png">
+    <img src="Material/featured/Aethon-Front.jpg">
+    <img src="Material/featured/intracom-side-lounge-meeting.png">
+    <img src="Material/featured/wowsmockup.jpg">
+    <img src="Material/featured/smartcities.jpg">
+    <img src="Material/featured/Kostis-shoes.jpg">
+    <img src="Material/featured/MaistrosCard.jpg">
+    <img src="Material/featured/Roadmap2-01.jpg">
+    <img src="Material/featured/AMG.png">
+    <img src="Material/featured/bnbUI.png">
+    <img src="Material/featured/EsportsLeagueConclusion.jpg">
+    <img src="Material/featured/LandingPage.png">
+    <img src="Material/featured/MaskBox-Preview-1.jpg">    
+    <img src="Material/featured/WingsSmallFront.jpg">
+    <img src="Material/featured/Pandora.jpg">
+    <img src="Material/featured/PESpuzzle.jpg">
+    <img src="Material/featured/PlayNowSpecs-Post.jpg">
+    <img src="Material/featured/WingsBig.jpg">
+    <img src="Material/featured/Report-Campaigns.jpg">
+    <img src="Material/featured/RizaZoe.png">
+    <img src="Material/featured/UbiBrand.png">
+    <img src="Material/featured/WHIZZYBIZZY-4.jpg">
+    <!-- Add more images -->
+  </div>
+</section>
+<!-- END FEATURED WORK SECTION -->
+
+
+
 <!-- START PROJECTS SECTION -->
 <section id="projects">
   <div class="projects-title">
@@ -105,7 +139,8 @@
     <div class="project-tile">
       <h3>R6 Online Tournament</h3>
       <div class="project-img-container">
-      <a href=""><img src="Material\600x450-assets\rainbowsix.png" class="project-img" alt="R6 Online Tournament"></a>
+      <a href="javascript:void(0)"><img src="Material\600x450-assets\rainbowsix.png" class="project-img" alt="R6 Online Tournament"></a>
+      <div class="coming-soon">CASE STUDY<br>COMING SOON</div>
         <span class="top-border"></span>
   <span class="left-border"></span>
       </div>
@@ -115,8 +150,9 @@
     <div class="project-tile">
       <h3>Kontos Handmade Shoes</h3>
       <div class="project-img-container">
-      <a href=""><img src="https://github.com/Aprilrawr/Freecodecamp-tests/blob/main/Project3-100.jpg?raw=true" class="project-img" alt="Kontos Handmade Shoes"></a>
-        <span class="top-border"></span>
+      <a href="javascript:void(0)"><img src="https://github.com/Aprilrawr/Freecodecamp-tests/blob/main/Project3-100.jpg?raw=true" class="project-img" alt="Kontos Handmade Shoes"></a>
+      <div class="coming-soon">CASE STUDY<br>COMING SOON</div>
+      <span class="top-border"></span>
   <span class="left-border"></span>
       </div>
       <div class="project-desc">Boutique brand crafting handmade shoes.</div>
@@ -231,29 +267,60 @@
   <div class="contact-links">
 
     <a href="mailto:rawrania@gmail.com" class="contact-link" target="_blank">
-      <i class="fab fa-envelope"></i>
-      <span class="gradient-text">Email Me</span>
+      <i class="fas fa-envelope"></i>
+      <span>Email Me</span>
     </a>
   
     <a href="www.linkedin.com/in/ourania-nikolakopoulou-96696ab6" class="contact-link" target="_blank">
       <i class="fab fa-linkedin"></i>
-      <span class="gradient-text">LinkedIn</span>
+      <span>LinkedIn</span>
     </a>
   
     <a href="https://github.com/YOUR-GITHUB" class="contact-link" target="_blank">
       <i class="fab fa-github"></i>
-      <span class="gradient-text">GitHub</span>
+      <span>GitHub</span>
     </a>
   
     <a href="tel:+14169943510" class="contact-link">
       <i class="fas fa-phone-alt"></i>
-      <span class="gradient-text">Call Me</span>
+      <span>Call Me</span>
     </a>
   </div>
   
 </section>
 
 <!-- END CONTACT SECTION -->
+
+<!-- Lightbox Overlay -->
+<div id="lightbox" class="lightbox hidden">
+  <div class="lightbox-content">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview" />
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.masonry-grid img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove('hidden');
+    });
+  });
+
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.add('hidden');
+    }
+  });
+</script>
 
 <!-- NAVBAR JAVA -->
 <script>
