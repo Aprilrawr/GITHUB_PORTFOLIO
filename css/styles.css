@@ -2,6 +2,12 @@
   box-sizing: border-box;
     margin: 0;
   padding: 0;
+  /* outline: 3px solid red; */ /* 💥 See all element bounds */
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* 💥 Prevent horizontal scrolling */
 }
 
 h1, h2, h3, .highlight {
@@ -15,6 +21,12 @@ body, p, a {
 }
 
 b {color:#d29bec;font-weight: 800;}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Avoid inline gaps */
+}
 
 /* USE TO TEST BORDERS OF AN ELEMENT 
 border: 5px solid red;
@@ -145,7 +157,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 4em 10em;
+  padding: 4em 5vw;
   background-color: #111;
   color: white;
   overflow-x: hidden; /* Prevents overflow */
@@ -222,7 +234,7 @@ body {
   }
 
   .welcome-img {
-    width: 90%;
+    width: 100%;
     max-width: 300px;
   }
 }
@@ -461,6 +473,8 @@ h3 {
   
   /* Navbar tweaks */
   nav {
+    max-width: 100%;
+    overflow-x: hidden;
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5em;
@@ -478,7 +492,6 @@ h3 {
 
   /* Welcome section narrower */
   #welcome-section {
-    width: 90vw;
     padding: 1em;
   }
 
