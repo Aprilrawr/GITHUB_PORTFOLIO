@@ -17,25 +17,32 @@
         document.head.appendChild(base);
       }
     </script>
+    
 
-<script defer>
-  document.addEventListener("DOMContentLoaded", () => {
-    const isGitHub = window.location.hostname === "aprilrawr.github.io";
-    const basePath = isGitHub 
-      ? "/GITHUB_PORTFOLIO/components/" 
-      : "components/";  // No "../" needed when you're already in a subfolder like case_studies
-
-    // Load navbar-sub.html correctly
-    fetch(basePath + "navbar-sub.html")
-      .then(res => res.text())
-      .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
-
-    // Load contact.html
-    fetch(basePath + "contact.html")
-      .then(res => res.text())
-      .then(data => document.getElementById('contact-placeholder').innerHTML = data);
-  });
-</script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", () => {
+        const isGitHub = window.location.hostname === "aprilrawr.github.io";
+        
+        // Always use relative paths; GitHub base tag takes care of rewriting them
+        const basePath = "components/";
+    
+        const navbarFile = basePath + "navbar-sub.html";
+        const contactFile = basePath + "contact.html";
+    
+        // Fetch navbar
+        fetch(navbarFile)
+          .then(res => res.text())
+          .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
+          .catch(err => console.error("Navbar fetch failed", err));
+    
+        // Fetch contact
+        fetch(contactFile)
+          .then(res => res.text())
+          .then(data => document.getElementById('contact-placeholder').innerHTML = data)
+          .catch(err => console.error("Contact fetch failed", err));
+      });
+    </script>
+    
 
 
 
