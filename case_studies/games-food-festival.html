@@ -6,6 +6,8 @@
   <title>Games & Food Festival | Case Study</title>
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
 
     <!-- Github Link fix -->
     <script>
@@ -18,19 +20,23 @@
 
 <script defer>
   document.addEventListener("DOMContentLoaded", () => {
-    const basePath = window.location.hostname === "aprilrawr.github.io"
-      ? "/GITHUB_PORTFOLIO/components/"
-      : "../components/";
+    const isGitHub = window.location.hostname === "aprilrawr.github.io";
+    const basePath = isGitHub 
+      ? "/GITHUB_PORTFOLIO/components/" 
+      : "components/";  // No "../" needed when you're already in a subfolder like case_studies
 
-    fetch(`${basePath}navbar.html`)
+    // Load navbar-sub.html correctly
+    fetch(basePath + "navbar-sub.html")
       .then(res => res.text())
       .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
 
-    fetch(`${basePath}contact.html`)
+    // Load contact.html
+    fetch(basePath + "contact.html")
       .then(res => res.text())
       .then(data => document.getElementById('contact-placeholder').innerHTML = data);
   });
 </script>
+
 
 
 </head>
@@ -91,19 +97,19 @@
       </div>
       <div class="result-card">
         <h3>📺<br>Unique Views</h3>
-        <p>5.3 million</p>
+        <p>5.3m</p>
       </div>
       <div class="result-card">
         <h3>🔗<br>Website</h3>
         <p><a href="https://gamesandfoodfestival.gr" target="_blank">Site</a></p>
       </div>
       <div class="result-card">
-        <h3>📅<brDays</h3>
+        <h3>📅<br>Days</h3>
         <p>3</p>
       </div>
       <div class="result-card">
         <h3>🏆<br>Prize Pool</h3>
-        <p>€40,000+</p>
+        <p>€40k</p>
       </div>
       <div class="result-card">
         <h3>🎁<br>Prize Pool & Giveaways</h3>
@@ -299,6 +305,7 @@
 
 
 </script>
+
     
   
   </body>

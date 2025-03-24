@@ -1,8 +1,8 @@
 *, *::before, *::after {
   box-sizing: border-box;
-    margin: 0;
+  margin: 0;
   padding: 0;
-  /* outline: 3px solid red; */ /* 💥 See all element bounds */
+  outline: 3px solid red;  /* 💥 See all element bounds */
 }
 
 :root {
@@ -633,72 +633,74 @@ background-color: #C0BABA; /* Uniform light background */
   
   /* Skills Section Styling End */
 
-  /* Case Studies Styling Start */
-  .case-study {
-    padding: 4em 2em;
-    width: 100%;
-    margin: 0 auto;
-    text-align: left;
-    color: #fff;
-    display: block;
-    background-color: #1a1a1a;
-  }
-  
-  .case-study h1 {
-    text-align: center;
-    margin-bottom: 2em;
-    font-size: 2.5em;
-  }
-  
-  .cs-section {
-    margin-bottom: 2em;
-    max-width: 900px;
-  }
+  /* ==========================
+   CASE STUDY SECTION - BASE
+   ========================== */
 
-  .cs-section img {
-    margin-bottom: 2em;
-    max-width: 500px;
-  }
-  
-  .cs-section h2 {
-    color: #d29bec;
-    margin-bottom: 0.5em;
-  }
-  
-  .case-image {
-    width: 100%;
-    max-width: 800px;
-    border-radius: 10px;
-    margin-top: 1em;
-  }
-  
-  .case-study ul {
-    padding-left: 1.5em;
-    margin-bottom: 1em;
-  }
-  
-  .case-study li {
-    margin-top: 0.8em;
-    font-size: 1em;
-    line-height: 1.5;
-  }
-  .case-study p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-    padding: 0 1em; /* Add safe padding */
-    box-sizing: border-box;
-  }
-  
-  .case-study hr {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px solid #d184ab;
-    margin-bottom: 2em;
-  }
+.case-study {
+  padding: 4em 1em;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  color: #fff;
+  background-color: #1a1a1a;
+  box-sizing: border-box;
+}
 
+.case-study h1 {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: 2.5em;
+}
+
+.case-study h2 {
+  color: #d29bec;
+  margin-bottom: 0.5em;
+}
+
+.case-study p {
+  font-size: 1em;
+  padding: 0.5em 0;
+  line-height: 1.6;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.case-study li {
+  margin-top: 1em;
+  margin-left: 1.2em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  max-width: 1200px;
+  margin: 0 auto 4em auto;
+  box-sizing: border-box;
+}
+
+.cs-section {
+  margin-bottom: 2em;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.complimg {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Optional: temporary overflow debugging */
+/* * { outline: 1px solid red; } */
   
   /* 🎯 New: Grid Layout for Sections */
   .cs-grid {
@@ -783,11 +785,15 @@ background-color: #C0BABA; /* Uniform light background */
 
 /* RESULTS Styling Start */
 
+:root {
+  --pinkgradient: linear-gradient(135deg, #d29bec, #9C2460);
+}
+
 .results-section {
-  margin-top: 4em;        /* Space above */
-  padding: 2em 1em;       /* Inner spacing */
-  background-color: #1a1a1a;  /* Match your dark theme or change if needed */
-  border-top: 1px solid #d184ab; /* Optional: visual separator */
+  margin-top: 4em;
+  padding: 2em 1em;
+  background-color: #1a1a1a;
+  border-top: 1px solid #d184ab;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
@@ -797,6 +803,7 @@ background-color: #C0BABA; /* Uniform light background */
   color: #d29bec;
   margin-bottom: 1em;
   font-size: 2em;
+  text-align: center;
 }
 
 .results-grid {
@@ -806,26 +813,51 @@ background-color: #C0BABA; /* Uniform light background */
   padding: 0 1em;
 }
 
+/* Glassmorphic Effect + Hover */
 .result-card {
-  background-color: #2a2a2a;
-  padding: 1.5em;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1em;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2em;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
+.result-card:hover {
+  background: var(--pinkgradient);
+  transform: scale(1.03);
+  color: white;
+}
+
+/* Emoji Styling */
 .result-card h3 {
-  margin-bottom: 0.5em;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #d184ab;
-  text-align: center;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-card h3::first-line {
+  font-size: 3em; /* Emoji size */
+  line-height: 1;
 }
 
 .result-card p {
-  font-size: clamp(1.5em, 4vw, 2em); /* Responsive sizing */
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5em;
   font-weight: bold;
   margin: 0;
+  color: white;
   text-align: center;
-  white-space: nowrap; /* 💥 Prevent line breaks */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .result-card a {
@@ -836,6 +868,8 @@ background-color: #C0BABA; /* Uniform light background */
 .result-card a:hover {
   text-decoration: underline;
 }
+
+
 
 
 /* Lightbox Base */
@@ -968,7 +1002,6 @@ background-color: #C0BABA; /* Uniform light background */
   }
 
 
-
   .projects-grid {
     grid-template-columns: 1fr;
     grid-gap: 1rem;
@@ -1057,15 +1090,6 @@ background-color: #C0BABA; /* Uniform light background */
     column-count: 1;
   }
 
-  .case-study li {
-    font-size: 0.95em;
-  }
-
-  .case-study p {
-    font-size: 1em;
-    padding: 0 0.5em;  /* Less padding for small screens */
-  }
-
   .carousel-img {
     max-width: 50vw;
     margin-right: 5px;
@@ -1076,4 +1100,86 @@ background-color: #C0BABA; /* Uniform light background */
     padding: 0.3rem 0.6rem;
   }
 
+  .case-study {
+    padding: 2em 1em;
+  }
+
+  .cs-section {
+    margin-bottom: 2em;
+    padding: 0 0.5em;
+  }
+
+  .case-study h1 {
+    font-size: 1.8em;
+    line-height: 1.2;
+  }
+
+  .case-study h2 {
+    font-size: 1.3em;
+  }
+
+  .case-study p,
+  .case-study li {
+    font-size: 1em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5em;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding: 1em 0.5em;
+  }
+
+  .result-card {
+    padding: 1em;
+    font-size: 0.9em;
+  }
+
+  .carousel-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carousel-container {
+    padding: 1em;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .gallery-section h2 {
+    font-size: 1.5em;
+  }
+
+
+
+}
+
+@media screen and (max-width: 500px) {
+  .case-study p {
+    font-size: 0.95em;
+    padding: 0 0.25em; /* Reduce side padding */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5em;
+  }
+
+  .case-study h1 {
+    font-size: 1.6em;
+    line-height: 1.2;
+  }
+
+  .case-study h2 {
+    font-size: 1.2em;
+  }
+
+  .case-study li {
+    font-size: 0.95em;
+    line-height: 1.4em;
+  }
 }
