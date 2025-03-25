@@ -332,20 +332,24 @@
 
 <!-- NAVBAR JAVA -->
 <script>
-  const toggle = document.getElementById('nav-toggle');
-  const links = document.getElementById('nav-links');
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById('nav-toggle');
+    const links = document.getElementById('nav-links');
 
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('show');
-  });
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
 
-  // Close menu on link click (optional)
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      links.classList.remove('show');
-    });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          links.classList.remove('show');
+        });
+      });
+    }
   });
 </script>
+
 
 <!-- Ensure all images are Loaded -->
 
