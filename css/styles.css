@@ -947,6 +947,7 @@ background-color: #C0BABA; /* Uniform light background */
   max-height: 90vh; /* Fit within 90% of viewport height */
   object-fit: contain; /* Ensures aspect ratio is preserved */
   border-radius: 10px;
+  background-color: #C0BABA; /* 👈 Add a subtle background for transparent PNGs */
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
 
@@ -1038,7 +1039,7 @@ background-color: #C0BABA; /* Uniform light background */
 
   .logos-scroll {
     gap: 1.2em;
-    animation-duration: 40s; /* slower for small screens */
+    animation-duration: 40s; /* slower scroll */
   }
 
   .logos-scroll img {
