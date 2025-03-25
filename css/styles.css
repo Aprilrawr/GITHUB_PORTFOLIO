@@ -20,6 +20,31 @@ h1, h2, h3, .highlight {
   font-weight: 700; /* Bold headers */
 }
 
+section h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em
+  margin: 2em auto 1em;
+  color: #d29bec;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* Optional underline accent for polish */
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--pinkgradient);
+  margin: 0.5em auto 0;
+  border-radius: 3px;
+}
+
+
+
 body, p, a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
@@ -206,11 +231,6 @@ body {
   margin-bottom: 3em;
 }
 
-.logos-section h2 {
-  font-size: 2em;
-  margin-bottom: 1.5em;
-  color: #333;
-}
 
 /* Center the scroll area, max 65% of viewport */
 .logos-scroll-wrapper {
@@ -224,7 +244,8 @@ body {
 .logos-scroll {
   display: flex;
   gap: 5em;
-  animation: scroll-logos 20s linear infinite; /* Longer duration = smoother scroll */
+  animation: scroll-logos 30s linear infinite;
+  width: max-content; /* Let content size define the width */
 }
 
 .logos-scroll img {
@@ -240,10 +261,16 @@ body {
 }
 
 
+
+
 /* Animate full scroll of content width */
 @keyframes scroll-logos {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }  /* Still -50%, but now works due to duplication */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* LOGOS SECTION END */
@@ -293,8 +320,7 @@ h3 {
 
 
 #projects h2 {
-  font-size: 2.5em;
-  padding-top: 0.5em;
+  padding-top: 1em;
   color: #d29bec; /* Accent */
 }
 
@@ -560,6 +586,19 @@ background-color: #C0BABA; /* Uniform light background */
   box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.3);
 }
 
+.disclaimer {
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: #888;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  border-top: 1px solid #ccc;
+}
+
+
 
   /* Contact Section Styling End */
 
@@ -576,7 +615,7 @@ background-color: #C0BABA; /* Uniform light background */
   
   #skills-section h2 {
     font-size: 2.2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     color: #333;
   }
   
@@ -998,15 +1037,13 @@ background-color: #C0BABA; /* Uniform light background */
   }
 
   .logos-scroll {
-    display: flex;
-    gap: 2em;
-    animation: scroll-logos 10s linear infinite; /* Longer duration = smoother scroll */
+    gap: 1.2em;
+    animation-duration: 40s; /* slower for small screens */
   }
 
   .logos-scroll img {
-    height: 75px;
+    height: 50px;
   }
-
 
   .projects-grid {
     grid-template-columns: 1fr;

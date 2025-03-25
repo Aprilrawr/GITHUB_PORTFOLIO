@@ -9,39 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <title>Portfolio Page</title>
-    <link rel="stylesheet" href="css\styles.css">
-
-    <!-- Github Link fix -->
-    <script>
-      if (window.location.hostname === "aprilrawr.github.io") {
-        const base = document.createElement('base');
-        base.href = "/GITHUB_PORTFOLIO/";
-        document.head.appendChild(base);
-      }
-    </script>
-
-    <script defer>
-      document.addEventListener("DOMContentLoaded", () => {
-        fetch('components/navbar.html')
-          .then(res => res.text())
-          .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
-    
-        fetch('components/contact.html')
-          .then(res => res.text())
-          .then(data => document.getElementById('contact-placeholder').innerHTML = data);
-      });
-    </script>
-    
+    <link rel="stylesheet" href="css\styles.css">    
 
   </head>
   <body>
-  <header>
+
+<!-- START NAV -->
+    <nav>
+      <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+      <div class="nav-links" id="nav-links">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="#welcome-section">About</a>
+        <a class="nav-link" href="#featured-work">Featured</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills-section">Skills</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </nav>
     
-
-<!-- Navbar placeholder -->
-<div id="navbar-placeholder"></div>
-
-	</header>
+<!-- END NAV -->
 
 <!-- START WELCOME SECTION -->
 <section id="welcome-section">
@@ -52,7 +38,7 @@
     <p>Expert in <b>Adobe Suite</b>, <b>Social Media campaigns</b>, <b>3D design</b>, and <b>front-end web development</b>. Skilled in leading design teams, maintaining brand consistency, and delivering high-impact visuals across print, web, and advertising platforms.</p>
     <p>I am seeking a dynamic role where I can <b>innovate, grow, and contribute</b> to impactful design strategies.</p>
     
-    <a href="https://www.linkedin.com/in/ourania-nikolakopoulou-96696ab6/" id="profile-link" target="_blank">Full Resume 😊</a>
+    <a href="Material\RaniaNikolakopoulou-Resume-MAR25.pdf" id="profile-link" target="_blank">Full Resume 😊</a>
   </div>
 
   <div class="welcome-right">
@@ -80,7 +66,7 @@
       <img src="Material\Logos-assets\firstaid.png" alt="firstaid">
       <img src="Material\Logos-assets\KostisShoes.png" alt="Kostis Shoes">
       <img src="Material\Logos-assets\dimrags.png" alt="DimRags">
-      <img src="Material\Logos-assets\VestaLand.png" width="50%" alt="Vesta Land Real Estate">
+    
       <!-- Duplicate for seamless loop -->
       <img src="Material\Logos-assets\gamesfoodlogo.png" alt="Games and Food Festival">
       <img src="Material\Logos-assets\redbetfair.png" alt="RedBetFair">
@@ -92,7 +78,7 @@
       <img src="Material\Logos-assets\firstaid.png" alt="firstaid">
       <img src="Material\Logos-assets\KostisShoes.png" alt="Kostis Shoes">
       <img src="Material\Logos-assets\dimrags.png" alt="DimRags">
-      <img src="Material\Logos-assets\VestaLand.png" width="50%" alt="Vesta Land Real Estate">
+    
 
     </div>
   </div>
@@ -271,9 +257,47 @@
 
 <!-- END SKILLS SECTION -->
 
+<!-- START CONTACT SECTION -->
 
-<!-- Contact placeholder -->
-<div id="contact-placeholder"></div>
+<section id="contact">
+  <h2>Let’s Connect</h2>
+  <p>If you feel like I would be a good fit for your company, please feel free to reach out!</p>
+
+  <div class="contact-photo-wrapper">
+    <img src="../Material/600x450-assets/myphoto.jpg" alt="Rania Photo" class="contact-photo">
+  </div>
+
+  <div class="contact-links">
+
+    <a href="mailto:rawrania@gmail.com" class="contact-link" target="_blank">
+      <i class="fas fa-envelope"></i>
+      <span>Email Me</span>
+    </a>
+  
+    <a href="https://www.linkedin.com/in/ourania-nikolakopoulou-96696ab6" class="contact-link" target="_blank">
+      <i class="fab fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+  
+    <a href="https://www.artstation.com/aprilrawr" class="contact-link" target="_blank">
+      <i class="fab fa-artstation"></i>
+      <span>Artstation</span>
+    </a>
+  
+    <a href="tel:+14169943510" class="contact-link">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call Me</span>
+    </a>
+  </div>
+  
+  <div class="disclaimer">
+    <p>All content, visuals, branding, and code presented on this page were created solely by me.</p>
+  </div>
+  
+
+</section>
+
+<!-- END CONTACT SECTION -->
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" class="lightbox hidden">
