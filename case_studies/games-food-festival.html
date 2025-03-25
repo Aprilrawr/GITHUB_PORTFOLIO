@@ -8,40 +8,35 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-
-    <!-- Github Link fix -->
+    <!-- ... other meta and links ... -->
+  
     <script>
+      // Only add <base> on GitHub
       if (window.location.hostname === "aprilrawr.github.io") {
         const base = document.createElement('base');
         base.href = "/GITHUB_PORTFOLIO/";
         document.head.appendChild(base);
       }
     </script>
-    
-
-    <script defer>
+  
+    <!-- Defer Fetch Script -->
+    <!-- <script defer>
       document.addEventListener("DOMContentLoaded", () => {
-        const isGitHub = window.location.hostname === "aprilrawr.github.io";
-        
-        // Always use relative paths; GitHub base tag takes care of rewriting them
-        const basePath = "components/";
-    
-        const navbarFile = basePath + "navbar-sub.html";
-        const contactFile = basePath + "contact.html";
-    
-        // Fetch navbar
-        fetch(navbarFile)
+        // Always use relative paths, <base> will rewrite on GitHub
+        fetch("components/navbar-sub.html")
           .then(res => res.text())
           .then(data => document.getElementById('navbar-placeholder').innerHTML = data)
           .catch(err => console.error("Navbar fetch failed", err));
-    
-        // Fetch contact
-        fetch(contactFile)
+  
+        fetch("components/contact.html")
           .then(res => res.text())
           .then(data => document.getElementById('contact-placeholder').innerHTML = data)
           .catch(err => console.error("Contact fetch failed", err));
       });
-    </script>
+    </script> -->
+  
+    
+    
     
 
 
@@ -49,8 +44,16 @@
 </head>
 <body>
 
-<!-- Navbar placeholder -->
-<div id="navbar-placeholder"></div>
+  <nav>
+    <div class="nav-toggle" id="nav-toggle">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a class="nav-link" href="../index.html">Back to Home</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </div>
+  </nav>
+  <!-- END NAV -->
+  
+
 
 </header>
 
@@ -140,68 +143,95 @@
   <div class="gallery-section">
     <h2>Print</h2>
     <div class="carousel">
-      <!-- Print Carousel with 10 images -->
+      <!-- Print Carousel -->
       <div class="carousel-container">
         <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
         <div class="carousel-track">
-          <img src="case_studies/print/Site-Live.jpg" class="carousel-img">
-          <img src="case_studies/print/ticketspreview.jpg" class="carousel-img">
-          <img src="case_studies/print/Invitation2.jpg" class="carousel-img">
-          <img src="case_studies/print/Exhibitor.jpg" class="carousel-img">
-          <img src="case_studies/print/VIP.jpg" class="carousel-img">
-          <img src="case_studies/print/lanyardmaybe.jpg" class="carousel-img">
-          <img src="case_studies/print/Schedule-TV-Sunday.jpg" class="carousel-img">
-          <img src="case_studies/print/Agon-DisplayPartner.jpg" class="carousel-img">
-          <img src="case_studies/print/IntrepidFox-eSportsORGs_Post.jpg" class="carousel-img">
-          <img src="case_studies/print/Marseaux-Post.jpg" class="carousel-img">
-          <img src="case_studies/print/cosplayersposter.jpg" class="carousel-img">
+          <img src="../case_studies/print/Site-Live.jpg" class="carousel-img">
+          <img src="../case_studies/print/ticketspreview.jpg" class="carousel-img">
+          <img src="../case_studies/print/Invitation2.jpg" class="carousel-img">
+          <img src="../case_studies/print/Exhibitor.jpg" class="carousel-img">
+          <img src="../case_studies/print/VIP.jpg" class="carousel-img">
+          <img src="../case_studies/print/lanyardmaybe.jpg" class="carousel-img">
+          <img src="../case_studies/print/Schedule-TV-Sunday.jpg" class="carousel-img">
+          <img src="../case_studies/print/Agon-DisplayPartner.jpg" class="carousel-img">
+          <img src="../case_studies/print/IntrepidFox-eSportsORGs_Post.jpg" class="carousel-img">
+          <img src="../case_studies/print/Marseaux-Post.jpg" class="carousel-img">
+          <img src="../case_studies/print/cosplayersposter.jpg" class="carousel-img">
         </div>
         <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
       </div>
-
       <hr>
-
     </div>
-
+  
     <h2>Event Gallery</h2>
     <div class="carousel">
       <!-- Gallery Carousel -->
       <div class="carousel-container">
         <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
         <div class="carousel-track">
-          <img src="case_studies/gallery/FAGF_BESTnew (63 of 84).jpg" class="carousel-img">
-          <img src="case_studies/gallery/gameandfood (1 of 35).jpg" class="carousel-img">
-          <img src="case_studies/gallery/gameandfood (33 of 35).jpg" class="carousel-img">
-          <img src="case_studies/gallery/gameandfood (7 of 35).jpg" class="carousel-img">
-          <img src="case_studies/gallery/gameandfood (8 of 35).jpg" class="carousel-img">
-          <img src="case_studies/gallery/03.jpg" class="carousel-img">
-          <img src="case_studies/gallery/032.jpg" class="carousel-img">
-          <img src="case_studies/gallery/050.jpg" class="carousel-img">
-          <img src="case_studies/gallery/07.jpg" class="carousel-img">
-          <img src="case_studies/gallery/085.jpg" class="carousel-img">
-          <img src="case_studies/gallery/086.jpg" class="carousel-img">
-          <img src="case_studies/gallery/087.jpg" class="carousel-img">
-          <img src="case_studies/gallery/142.jpg" class="carousel-img">
-          <img src="case_studies/gallery/176.jpg" class="carousel-img">
-          <img src="case_studies/gallery/269.jpg" class="carousel-img">
-          <img src="case_studies/gallery/270.jpg" class="carousel-img">
-          <img src="case_studies/gallery/328.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/FAGF_BESTnew (63 of 84).jpg" class="carousel-img">
+          <img src="../case_studies/gallery/gameandfood (1 of 35).jpg" class="carousel-img">
+          <img src="../case_studies/gallery/gameandfood (33 of 35).jpg" class="carousel-img">
+          <img src="../case_studies/gallery/gameandfood (7 of 35).jpg" class="carousel-img">
+          <img src="../case_studies/gallery/gameandfood (8 of 35).jpg" class="carousel-img">
+          <img src="../case_studies/gallery/03.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/032.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/050.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/07.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/085.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/086.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/087.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/142.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/176.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/269.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/270.jpg" class="carousel-img">
+          <img src="../case_studies/gallery/328.jpg" class="carousel-img">
         </div>
         <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
       </div>
-
       <hr>
-
     </div>
-
   </div>
-</section>
-
 
 <!-- END CaseStudy -->
 
-<!-- Contact placeholder -->
-<div id="contact-placeholder"></div>
+<!-- START CONTACT SECTION -->
+
+<section id="contact">
+  <h2>Let’s Connect</h2>
+  <p>If you feel like I would be a good fit for your company, please feel free to reach out!</p>
+
+  <div class="contact-photo-wrapper">
+    <img src="../Material/600x450-assets/myphoto.jpg" alt="Rania Photo" class="contact-photo">
+  </div>
+
+  <div class="contact-links">
+
+    <a href="mailto:rawrania@gmail.com" class="contact-link" target="_blank">
+      <i class="fas fa-envelope"></i>
+      <span>Email Me</span>
+    </a>
+  
+    <a href="www.linkedin.com/in/ourania-nikolakopoulou-96696ab6" class="contact-link" target="_blank">
+      <i class="fab fa-linkedin"></i>
+      <span>LinkedIn</span>
+    </a>
+  
+    <a href="https://www.artstation.com/aprilrawr" class="contact-link" target="_blank">
+      <i class="fab fa-artstation"></i>
+      <span>Artstation</span>
+    </a>
+  
+    <a href="tel:+14169943510" class="contact-link">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call Me</span>
+    </a>
+  </div>
+  
+</section>
+
+<!-- END CONTACT SECTION -->
 
 
 <!-- Lightbox Overlay -->
