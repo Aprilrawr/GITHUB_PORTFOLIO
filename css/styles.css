@@ -714,6 +714,11 @@ background-color: #C0BABA; /* Uniform light background */
   white-space: normal;
 }
 
+.main-logo {
+  max-width: 50vw;
+  margin: 0 auto;
+}
+
 
 
 .cs-grid {
@@ -730,6 +735,66 @@ background-color: #C0BABA; /* Uniform light background */
   max-width: 100%;
   box-sizing: border-box;
 }
+
+/* Autogrid gallery section */
+
+.cs-section-gallery {
+  margin: 4em auto;
+  padding: 0 5vw;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.cs-section-gallery h2,
+.cs-section-gallery h3 {
+  margin-bottom: 1em;
+  color: #d29bec;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%; /* Or whatever fixed height you want */
+  object-fit: cover; /* Crops and keeps aspect ratio */
+  border-radius: 10px;
+  background-color: #C0BABA;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* Section Description with Scrolling */
+
+.section-description {
+  margin-top: 1.5em;
+  font-size: 1.1em;
+  color: #ccc;
+  font-style: italic;
+  max-width:90vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  opacity: 0;
+  padding: 1em;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  background-color: #333;
+  border-radius: 2em;
+}
+
+.section-description.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .complimg {
   max-width: 50%;
