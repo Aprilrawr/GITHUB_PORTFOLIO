@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /*outline: 3px solid red;   💥 See all element bounds */
+
+  /*    outline: 3px solid red; 💥 See all element bounds */
 }
 
 :root {
@@ -734,6 +735,7 @@ background-color: #C0BABA; /* Uniform light background */
   margin-bottom: 2em;
   max-width: 100%;
   box-sizing: border-box;
+
 }
 
 /* Autogrid gallery section */
@@ -1214,6 +1216,7 @@ background-color: #C0BABA; /* Uniform light background */
   }
 
   .cs-section {
+    max-width: 90vw;
     margin-bottom: 2em;
     padding: 0 0.5em;
   }
