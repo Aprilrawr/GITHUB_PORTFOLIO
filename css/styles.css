@@ -51,7 +51,7 @@ body, p, a {
   font-weight: 400;
 }
 
-b {color:#d29bec;font-weight: 800;}
+b {color:#d29bec; font-weight: 800;}
 
 img {
   max-width: 100%;
@@ -1266,6 +1266,10 @@ background-color: #C0BABA; /* Uniform light background */
 
   .gallery-section h2 {
     font-size: 1.5em;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
 
